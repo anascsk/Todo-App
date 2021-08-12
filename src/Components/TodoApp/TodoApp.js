@@ -13,8 +13,8 @@ export default class   extends Component {
               </form>
 
               <ul>
-                  <li>sdjfsjkidhfsikouf</li>
-                  <li>sdjfsjkidhfsikouf</li>
+                  <li>sdjfsjkidhfsikouf <i className="fas fa-trash-alt"></i></li>
+                  <li>sdjfsjkidhfsikouf <i className="fas fa-trash-alt"></i></li>
               </ul>
             </div>
         )

@@ -52,12 +52,19 @@ ul {
 
 }
 ul li {
+    display: flex;
     list-style: none;
     background-color: #fff;
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
     box-shadow: 0 4px 6px #00000066;
+
+}
+
+ul li i {
+    text-align: right;
+    flex: 1;
 
 }
 
