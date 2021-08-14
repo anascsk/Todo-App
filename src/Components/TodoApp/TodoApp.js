@@ -29,6 +29,12 @@ export default class   extends Component {
 
 
         };
+        
+        deleteItem=(key)  => {
+            this.setState({
+                items: this.state.items.filter((data, index) => index !== key)
+            })
+        }
     
     render() {
         const { input,items } = this.state;
@@ -48,7 +54,7 @@ export default class   extends Component {
               <ul>
                   {items.map((data, index) => (
                       <li key={index}>
-                          {data} <i className="fas fa-trash-alt"></i> </li>
+                          {data} <i className="fas fa-trash-alt" onClick={this.deleteItem(index)}></i> </li>
                   ))}
               </ul>
             </div>
