@@ -3,7 +3,8 @@ import "./TodoApp.css";
 export default class   extends Component {
 
     state = {
-    input: ""
+    input: "",
+    items: []
     };
 
 
@@ -12,14 +13,31 @@ export default class   extends Component {
         this.setState({
             input: event.target.value
         })
-    };
+    
+
+        const storeItems = (event) => {
+            event.preventDefault()
+            const { input } = this.state;
+            
+            this.setState({
+                items: [...this.state.items, input],
+                input: ""
+            });
+
+         
+            };
+
+
+        };
+    
     render() {
-        const { input } = this.state;
+        const { input,items } = this.state;
+
         return (
             <div className="todo-container">
            
 
-            <form className="input-section">
+            <form className="input-section" onSubmit={this.storeItems}>
             <h1> Todo App</h1>
                 <input type="text"
                 value= {input}
@@ -28,10 +46,14 @@ export default class   extends Component {
               </form>
 
               <ul>
-                  <li>sdjfsjkidhfsikouf <i className="fas fa-trash-alt"></i></li>
-                  <li>sdjfsjkidhfsikouf <i className="fas fa-trash-alt"></i></li>
+                  {items.map((data, index) => (
+                      <li key={index}>
+                          {data} <i className="fas fa-trash-alt"></i> </li>
+                  ))}
               </ul>
             </div>
         )
     }
-}
+};
+
+//fas fa-trash-alt
